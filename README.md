@@ -2,7 +2,7 @@
 
 The following repository contains answers to the appliction tasks.
 
-########################### Question 1 - Python ###############################
+########################### Question 1 - Python ########################### 
 
 Task: Find common elements
 
@@ -24,7 +24,7 @@ Task: I test on another list if my code works correctly
 
 Result: {'a'}
 
-################################################### Question 2 - Python ##################################################
+########################### Question 2 - Python ########################### 
 
 Task: Calculating the number of Thursdays between 1990 and 2000  
 
@@ -61,12 +61,12 @@ Ususally every year has between 52 to 53 Thursdays, so between January 1st 1990 
 Result: The number that I arrived at in my estimation was 573, which falls between the range above, thus I 
 assume that I arrived at a correct solution
 
-############################################### Question 1 - India Census ################################################
+###########################  Question 1 - India Census ########################### 
 
 I created the map using Tableau Public. I have access only to the unpaid version of the software, thus I was not able to 
 export the created map. The screencast is attached to the submission email that presents the created map and its functionalities. The map represents states with low literacy, for the low literacy criterium I decided to map the total levels of education across India and color-code in light blue the states that have lowest total education metric levels.
 
-############################################## Question 2 - India Census - R ###############################################
+###########################  Question 2 - India Census - R ########################### 
 
 Task: Find out most similar districts in Bihar and Tamil Nadu.
 
@@ -167,6 +167,6 @@ Actualdatatreat and actualdatacontrol converts indicies to data that coresponds 
      
 Results: The treatment effect after matching is equal to -306029.3, meaning that 
 
-############################################## Question 3 - India Census - R ###############################################
+###########################  Question 3 - India Census - R ########################### 
 
 Task: How does the mobile penetration vary in regions (districts or states) with high or low agricultural workers?
