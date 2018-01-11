@@ -2,7 +2,7 @@
 
 The following repository contains answers to the appliction tasks.
 
-################################################### Question 1 - Python ##################################################
+################################### Question 1 - Python ######################################
 Task: Find common elements
 
       L1 = ['a', 'b', 'c']
