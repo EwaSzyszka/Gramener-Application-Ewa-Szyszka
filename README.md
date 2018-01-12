@@ -170,3 +170,97 @@ Results: The treatment effect after matching is equal to -306029.3, meaning that
 ###########################  Question 3 - India Census - R ########################### 
 
 Task: How does the mobile penetration vary in regions (districts or states) with high or low agricultural workers?
+
+I first created a visualization (attached to the submission email) to identify states with high agricultural workers.
+By high levels, I defined those that have above the mean (mean is illustrated on the graph by the red line) levels of 
+agricultural workers. The states with high levels were: West Bengal, Andhra Pradesh, Bihar, Chattisgarh, Gujrat, Madhya Pradesh, Maharastra, Tamilnadu, UP
+
+This is the code that produces the visualization
+
+    plot(India$State.name,India$Agricultural_Workers, xlab="State name", ylab="Number of Agricultural workers")
+    mean(India$Agricultural_Workers)
+    abline( h = 225551.3, col = "red")
+
+Next, I binded all the high Agriculture states into a single list
+
+    West_Bengal = India[India$State.name =="West Bengal",]
+    Andhra_Pradesh = India[India$State.name =="Andhra Pradesh",]
+    Bihar = India[India$State.name =="Bihar",]
+    Chattisgarh = India[India$State.name =="Chattisgarh",]
+    Gujrat = India[India$State.name =="Gujrat",]
+    Madhya_Pradesh = India[India$State.name =="Madhya Pradesh",]
+    Maharastra = India[India$State.name =="Maharastra",]
+    Tamilnadu = India[India$State.name =="Tamilnadu",]
+    UP = India[India$State.name =="UP",]
+    high_agriculture_states <- rbind(West_Bengal,Andhra_Pradesh, Bihar,Chattisgarh, Gujrat, Madhya_Pradesh, Maharastra,    Tamilnadu, UP )
+    
+To measure how mobile penetration vary in regions with high agriculture, I will use the coefficient of variation (CV) to measure the relative variability. To compute I would need to have the sd and mean values for number of households in each
+state with access to mobile.
+
+    mean(West_Bengal$Households_with_Telephone_Mobile_Phone)
+    sd(West_Bengal$Households_with_Telephone_Mobile_Phone)
+
+    mean(Andhra_Pradesh$Households_with_Telephone_Mobile_Phone)
+    sd(Andhra_Pradesh$Households_with_Telephone_Mobile_Phone)
+
+    mean(Bihar$Households_with_Telephone_Mobile_Phone)
+    sd(Bihar$Households_with_Telephone_Mobile_Phone)
+
+    mean(Chattisgarh$Households_with_Telephone_Mobile_Phone)
+    sd(Chattisgarh$Households_with_Telephone_Mobile_Phone)
+
+    mean(Gujrat$Households_with_Telephone_Mobile_Phone)
+    sd(Gujrat$Households_with_Telephone_Mobile_Phone)
+
+    mean(Madhya_Pradesh$Households_with_Telephone_Mobile_Phone)
+    sd(Madhya_Pradesh$Households_with_Telephone_Mobile_Phone)
+
+    mean(Maharastra$Households_with_Telephone_Mobile_Phone)
+    sd(Maharastra$Households_with_Telephone_Mobile_Phone)
+
+    mean(Tamilnadu$Households_with_Telephone_Mobile_Phone)
+    sd(Tamilnadu$Households_with_Telephone_Mobile_Phone)
+
+    mean(UP$Households_with_Telephone_Mobile_Phone)
+    sd(UP$Households_with_Telephone_Mobile_Phone)
+
+
+Next, I create the coefficient of variation (CV) function and compute the value for each state
+
+    CV <- function(mean, sd){
+      (sd/mean)*100
+    }
+
+    #West Bengal
+    CV(mean = 519953.2, sd = 343038.4)
+
+    #Andhra_Pradesh
+    CV(mean = 576622.5, sd = 178365.5 )
+
+    #Bihar
+    CV(mean = 276599.2, sd = 149805.6 )
+
+    #Chattisgarh
+    CV(mean = 95903, sd = 95077.08 )
+
+    #Gujrat
+    CV(mean = 323069.2, sd = 271636.8 )
+
+    #Madhya_Pradesh
+    CV(mean =  137733.5, sd = 84309.24 )
+
+    #Maharastra
+    CV(mean =  470250.3, sd = 485134.2 )
+
+    #Tamilnadu
+    CV(mean =  432838.2, sd = 221869 )
+
+    #UP
+    CV(mean =  310375.6, sd = 141538.7)
+
+
+Highest variability is in Maharastra = 103.1651
+Lowest variability is in Andhra_Pradesh = 30.9328
+Average variability in high agriculture states is 66.16942
+
+
