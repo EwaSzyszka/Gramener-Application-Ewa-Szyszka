@@ -165,8 +165,7 @@ Actualdatatreat and actualdatacontrol converts indicies to data that coresponds 
      actualdatacontrol <- India_edited[mout$index.control,]
      mean(actualdatatreat$Literate) - mean(actualdatacontrol$Literate) #difference after matching
      
-Results: The treatment effect after matching is equal to -306029.3, meaning that 
-
+Results: The difference after matching is equal to -306029.3, meaning that treatment effect, treatment being assigned to Bihar state is equal to -306029.3
 ###########################  Question 3 - India Census - R ########################### 
 
 Task: How does the mobile penetration vary in regions (districts or states) with high or low agricultural workers?
