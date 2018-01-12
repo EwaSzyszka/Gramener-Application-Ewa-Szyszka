@@ -264,3 +264,102 @@ Lowest variability is in Andhra_Pradesh = 30.9328
 Average variability in high agriculture states is 66.16942
 
 
+Next, I Created another visualization for the low agriculture states and chosen 10000 as a threshold for determining which states have low agriculture worker levels 
+
+    plot(India$State.name,India$Agricultural_Workers, xlab="State name", ylab="Number of Agricultural workers")
+    mean(India$Agricultural_Workers)
+    abline( h = 10000, col = "red")
+
+I binded all the high Agriculture states into a single list 
+
+    Andamans =  India[India$State.name =="Andamans",]
+    Arunachal_Pradesh = India[India$State.name =="Arunachal Pradesh",]
+    Chandigarh = India[India$State.name =="Chandigarh",]
+    Daman = India[India$State.name =="Daman",]
+    Delhi = India[India$State.name =="Delhi",]
+    Diu = India[India$State.name =="Diu",]
+    Himachal_Pradesh = India[India$State.name =="Himachal Pradesh",]
+    Jammu_and_Kashmir = India[India$State.name =="Jammu and Kashmir",]
+    Madhya_Pradesh = India[India$State.name =="Madhya Pradesh",]
+    Maharastra = India[India$State.name =="Maharastra",]
+    Nagaland = India[India$State.name =="Nagaland",]
+    Uttarakhand = India[India$State.name =="Uttarakhand",]
+    low_agriculture_states <- rbind(Andamans, Arunachal_Pradesh, Chandigarh, Daman, Delhi, Diu, Himachal_Pradesh, Jammu_and_Kashmir, Madhya_Pradesh, Maharastra, Nagaland, Uttarakhand)
+    
+I calculated the means and standard deviations necessary for the CV computation
+
+    mean(Andamans$Households_with_Telephone_Mobile_Phone)
+    sd(Andamans$Households_with_Telephone_Mobile_Phone)
+
+    mean(Arunachal_Pradesh$Households_with_Telephone_Mobile_Phone)
+    sd(Arunachal_Pradesh$Households_with_Telephone_Mobile_Phone)
+
+    mean(Chandigarh$Households_with_Telephone_Mobile_Phone)
+    sd(Chandigarh$Households_with_Telephone_Mobile_Phone)
+
+    mean(Daman$Households_with_Telephone_Mobile_Phone)
+    sd(Daman$Households_with_Telephone_Mobile_Phone)
+
+    mean(Delhi$Households_with_Telephone_Mobile_Phone)
+    sd(Delhi$Households_with_Telephone_Mobile_Phone)
+
+    mean(Diu$Households_with_Telephone_Mobile_Phone)
+    sd(Diu$Households_with_Telephone_Mobile_Phone)
+
+    mean(Himachal_Pradesh$Households_with_Telephone_Mobile_Phone)
+    sd(Himachal_Pradesh$Households_with_Telephone_Mobile_Phone)
+
+    mean(Jammu_and_Kashmir$Households_with_Telephone_Mobile_Phone)
+    sd(Jammu_and_Kashmir$Households_with_Telephone_Mobile_Phone)
+
+    mean(Madhya_Pradesh$Households_with_Telephone_Mobile_Phone)
+    sd(Madhya_Pradesh$Households_with_Telephone_Mobile_Phone)
+
+    mean(Nagaland$Households_with_Telephone_Mobile_Phone)
+    sd(Nagaland$Households_with_Telephone_Mobile_Phone)
+
+    mean(Uttarakhand$Households_with_Telephone_Mobile_Phone)
+    sd(Uttarakhand$Households_with_Telephone_Mobile_Phone)
+    
+ Next I compute the value of CV for low agriculture states
+ 
+     #Andamans
+     CV(mean = 26033.33, sd = 23393.01)
+
+     #Arunachal_Pradesh
+     CV(mean = 7898, sd = 6498.69 )
+
+     #Chandigarh
+     CV(mean = 209783, sd = NA)
+
+     #Daman
+     CV(mean = 43171, sd = NA )
+
+     #Delhi
+     CV(mean = 336863.9, sd = 202913.9 )
+
+     #Diu
+     CV(mean =  9001, sd = NA )
+
+     #Himachal_Pradesh
+     CV(mean =  101252.2, sd = 72859.34 )
+
+     #Jammu_and_Kashmir
+     CV(mean =  63645.77, sd = 52990.81 )
+
+     #Madhya_Pradesh
+     CV(mean =  137733.5, sd = 84309.24)
+
+     #Nagaland
+     CV(mean =  19293.27, sd = 16507.39)
+
+     #Uttarakhand
+     CV(mean =  114584.3, sd = 86095.45)
+     
+The NA values for standard deviation were obtained in states that had only one data sample, thus I omited them in my variability calculation, as there was not a sufficient amount of data for Chandigarh, Daman and Diu states.
+     
+Highest variability is in Andamans = 89.85792
+Lowest variability is in Delhi =  60.23617
+Average variability in high agriculture states is 76.18794
+
+Results: The average variability in lower agricultural level states in higher than in high agriculture states
