@@ -1,6 +1,5 @@
 # Gramener-Application-Ewa-Szyszka
 
-The following repository contains answers to the appliction tasks.
 
 ########################### Question 1 - Python ########################### 
 
@@ -63,14 +62,13 @@ assume that I arrived at a correct solution
 
 ###########################  Question 1 - India Census ########################### 
 
-I created the map using Tableau Public. I have access only to the unpaid version of the software, thus I was not able to 
-export the created map. The screencast is attached to the submission email that presents the created map and its functionalities. The map represents states with low literacy, for the low literacy criterium I decided to map the total levels of education across India and color-code in light blue the states that have lowest total education metric levels.
+I created the map using Tableau Public. The map represents states with low literacy, for the low literacy criterium I decided to map the total levels of education across India and color-code in light blue the states that have lowest total education metric levels.
 
 ###########################  Question 2 - India Census - R ########################### 
 
 Task: Find out most similar districts in Bihar and Tamil Nadu.
 
-For this task, I chosen to solve it using R programming language and the Euclidean distance method to measure which 
+I chosen to solve it using R programming language and the Euclidean distance method to measure which 
 districts in Bihar and Tamil Nadu are closest to each other with respect to levels of literacy
 
 Extracting the data and selecting the Literacy columns (BL and TL)
@@ -166,6 +164,7 @@ Actualdatatreat and actualdatacontrol converts indicies to data that coresponds 
      mean(actualdatatreat$Literate) - mean(actualdatacontrol$Literate) #difference after matching
      
 Results: The difference after matching is equal to -306029.3, meaning that treatment effect, treatment being assigned to Bihar state is equal to -306029.3
+
 ###########################  Question 3 - India Census - R ########################### 
 
 Task: How does the mobile penetration vary in regions (districts or states) with high or low agricultural workers?
